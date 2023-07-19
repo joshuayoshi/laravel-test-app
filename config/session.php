@@ -60,6 +60,8 @@ return [
     */
 
     'files' => storage_path('framework/sessions'),
+    //Changing forward slash to backwards slash
+    // 'files' => storage_path('framework\sessions'),
 
     /*
     |--------------------------------------------------------------------------

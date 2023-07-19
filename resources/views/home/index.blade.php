@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+    <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Laravel Blog</title>
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="/css/app.css">
-    </head><body>
-        <h1 class="text-center">Laravel Blog</h1>
-        <!-- Bootstrap JavaScript -->
-        <script src="/js/app.js"></script>
-    </body></html>
+
+        <title>Laravel</title>
+
+        @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+    </head>
+    <body>
+
+    </body>
+</html>
