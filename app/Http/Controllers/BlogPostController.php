@@ -48,19 +48,28 @@ class BlogPostController extends Controller
     
     public function edit(BlogPost $blogPost)
     {
-        //show form to edit the post
+        return view('blog.edit', [
+    'post' => $blogPost,
+    ]); //returns the edit view with the post
     }
 
     
     public function update(Request $request, BlogPost $blogPost)
     {
-        //save the edited post
+        $blogPost->update([
+            'title' => $request->title,
+            'body' => $request->body
+        ]);
+
+        return redirect('blog/' . $blogPost->id);
     }
 
     
     public function destroy(BlogPost $blogPost)
     {
-        //delete a post
+        $blogPost->delete();
+
+        return redirect('/blog');
     }
 
     public function database_test(){
